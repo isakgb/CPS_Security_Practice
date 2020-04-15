@@ -13,7 +13,6 @@ class RedditScraper:
         if res.status_code != 200:
             print("Request got status code {}".format(res.status_code))
             return
-        # open("index.html", "w").write(res.text)
         return BeautifulSoup(res.text, "html.parser")
 
     def get_posts_from_soup(self, soup):
